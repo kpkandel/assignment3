@@ -1,0 +1,149 @@
+<!--Assignment: JS Assignment-4
+	Name: Krishna Kandel
+	Date: 2021-08-11
+	-->
+
+<!--Header-->
+<%- include('layouts/header'); -%>
+  <body>
+    <!--Navigation bar-->
+    <%- include('layouts/nav'); -%>
+
+      <!--Form section-->
+      <section class="w50">
+        <form name="myform" method="Post" onsubmit="return formSubmit();" action="">
+
+          <h2> Your Information</h2>
+          <label>Name</label>
+          <input id="name" placeholder="First Last" type="text" name="name"><br />
+          <label>Email</label>
+          <input id="email" placeholder="Email" type="text" name="email"><br />
+          <label>Phone</label>
+          <input id="phone" placeholder="Phone" type="text" name="phone"><br />
+          <label>Street Address</label>
+          <input id="sAddress" placeholder="Street Address" type="text" name="sAddress"><br />
+          <label>Province</label>
+          <select id="province" name="province">
+            <option value="">-- Select Province --</option>
+            <option value="AB">Alberta</option>
+            <option value="BC">British Columbia</option>
+            <option value="MN">Manitoba</option>
+            <option value="NB">New Brunswick</option>
+            <option value="NF">New Foundland</option>
+            <option value="NT">Northwest Territores</option>
+            <option value="NS">Nova Scotia</option>
+            <option value="NU">Nunabut</option>
+            <option value="ON">Ontario</option>
+            <option value="PE">Prince Edward Island</option>
+            <option value="QC">Quebec</option>
+            <option value="SK">Saskatoon</option>
+          </select> <br /><br />
+          <label>Country</label>
+          <input id="country" placeholder="Country" type="text" name="country"><br />
+          <label>Postal Code</label>
+          <input id="pCode" placeholder="X9X 9X9" type="text" name="pCode"><br />
+
+          <h2>Available Items</h2>
+          <label>Pen ($ 2)</label>
+          <input id="pen" value="0" name="pen"><br />
+          <label>Copy ($ 5)</label>
+          <input id="copy" value="0" name="copy"><br />
+          <label>Bag ($ 12)</label>
+          <input id="bag" value="0" name="bag"><br /><br />
+
+          <input type="submit" value="Place Order">
+
+          <p id="errors"></p>
+        </form>
+      </section>
+
+      <!--Display the Form data-->
+      <section class="w50">
+        <div class="formData">
+          <% if(typeof(errors) !='undefined' ){ for(var error of errors){ %>
+            <p class="errors">
+              <%= error.msg%>
+            </p>
+            <% } } if(typeof(total) !='undefined' ){ %>
+              <p id="formResult">Receipt:</p>
+              <table>
+                <tr>
+                  <th>Name: </th>
+                  <td>
+                    <%= name %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Email: </th>
+                  <td>
+                    <%= email %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Phone: </th>
+                  <td>
+                    <%= phone %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Delivery Address: </th>
+                  <td>
+                    <%= streetAddress %>
+                    <%= province %>
+                    <%= country %>
+                    <%= postalCode %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <%= qCopy %> : Copy @ $ 4.00
+                  </th>
+                  <td>
+                    <%= copyPrice %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <%= qPen %> : Pen @ $ 2.00
+                  </th>
+                  <td>
+                    <%= penPrice %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <%= qBag %> : Bag @ $ 12.00
+                  </th>
+                  <td>
+                    <%= bagPrice %>
+                  </td>
+                </tr>
+                <tr>
+                  <th> Shipping Charge</th>
+                  <td>$<%= shippingCharge %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Subtotal: </th>
+                  <td>$<%= subTotal.toFixed(2) %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Tax: </th>
+                  <td>$<%= tax.toFixed(2) %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Total: </th>
+                  <td>$<%= total.toFixed(2) %>
+                  </td>
+                </tr>
+              </table>
+            <% } %>
+        </div>
+      </section>
+      <div class="clear"></div>
+  </body>
+
+  <!--Footer-->
+  <%- include('layouts/footer'); -%>

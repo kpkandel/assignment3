@@ -1,0 +1,86 @@
+<!--Assignment: JS Assignment-4
+	Name: Krishna Kandel
+	Date: 2021-08-11
+	-->
+
+<%- include('layouts/header'); -%>
+    <body>
+        <%- include('layouts/nav'); -%>
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>>
+                            <th>Phone</th>
+                            <th>Street Address</th>
+                            <th>Province</th>
+                            <th>Country</th>
+                            <th>Postal Code</th>
+                            <th>Copy</th>
+                            <th>Copy Price</th>
+                            <th>Pen</th>
+                            <th>penPrice</th>
+                            <th>Bag</th>
+                            <th>bagPrice</th>
+
+                            <th>Sub Total</th>
+                            <th>Tax</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var order of orders){ %>
+                            <tr>
+                                <td>
+                                    <%= order.name %>
+                                </td>
+                                <td>
+                                    <%= order.email %>
+                                </td>
+                                <td>
+                                    <%= order.phone %>
+                                </td>
+                                <td>
+                                    <%= order.streetAddress %>
+                                </td>
+                                <td>
+                                    <%= order.province %>
+                                </td>
+                                <td>
+                                    <%= order.country %>
+                                </td>
+                                <td>
+                                    <%= order.postalCode %>
+                                </td>
+                                <td>
+                                    <%= order.qCopy %>
+                                </td>
+                                <td>
+                                    <%= order.copyPrice %>
+                                </td>
+                                <td>
+                                    <%= order.qPen %>
+                                </td>
+                                <td>
+                                    <%= order.penPrice %>
+                                </td>
+                                <td>
+                                    <%= order.qBag %>
+                                </td>
+                                <td>
+                                    <%= order.bagPrice %>
+                                </td>
+                                <td>$<%= order.subTotal.toFixed(2) %>
+                                </td>
+                                <td>$<%= order.tax.toFixed(2) %>
+                                </td>
+                                <td>$<%= order.total.toFixed(2) %>
+                                </td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </section>
+    </body>
+<%- include('layouts/footer'); -%>
