@@ -8,7 +8,7 @@
     "ejs": "*",
     "express": "*",
     "express-validator": "*",
-    "express-session": "*",
+    "express-session": "1.17.3",
     "express-messages": "*",
     "connect-flash": "*",
     "mongoose": "*"
