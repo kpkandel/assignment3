@@ -6,7 +6,7 @@
   "dependencies": {
     "body-parser": "*",
     "ejs": "*",
-    "express": "*",
+    "express": "4.19.2",
     "express-validator": "*",
     "express-session": "*",
     "express-messages": "*",
