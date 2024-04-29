@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "body-parser": "*",
-    "ejs": "*",
+    "ejs": "3.1.10",
     "express": "*",
     "express-validator": "*",
     "express-session": "*",
