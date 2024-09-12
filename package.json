@@ -4,9 +4,9 @@
   "description": "Awesome website",
   "main": "index.js",
   "dependencies": {
-    "body-parser": "*",
+    "body-parser": "1.20.3",
     "ejs": "*",
-    "express": "*",
+    "express": "4.21.0",
     "express-validator": "*",
     "express-session": "*",
     "express-messages": "*",
