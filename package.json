@@ -6,9 +6,9 @@
   "dependencies": {
     "body-parser": "*",
     "ejs": "*",
-    "express": "*",
+    "express": "4.21.1",
     "express-validator": "*",
-    "express-session": "*",
+    "express-session": "1.18.1",
     "express-messages": "*",
     "connect-flash": "*",
     "mongoose": "*"
