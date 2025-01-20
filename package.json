@@ -11,7 +11,7 @@
     "express-session": "*",
     "express-messages": "*",
     "connect-flash": "*",
-    "mongoose": "*"
+    "mongoose": "6.13.6"
   },
   "devDependencies": {},
   "scripts": {
